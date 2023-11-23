@@ -1,8 +1,8 @@
-from user import user
+from classLibrary.user import user
 class manager(user):
     _login:str
     _password:str
-    def __int__(self,login,password,name,phone,bonus):
+    def __init__(self, login, password, name, phone, bonus):
         super().__init__(name,phone,bonus)
         self._login = login
         self._password = password
