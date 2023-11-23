@@ -25,7 +25,7 @@ class pay:
             for coffe in self._coffes:
                 self._sum += coffe.getPrise()
         if len(additionals) !=0:
-            for additional in self.additionals:
+            for additional in self._additionals:
                 self._sum += additional.getPrise()
     def getSun(self):
         return self._sum
