@@ -1,6 +1,8 @@
 from classLibrary import manager,smena ,user,pay,coffe,additional
 def OpenSmena (exmanager:manager.manager):
       return smena.smena(exmanager)
+
+
 def LoginManager(login,password):
     vallLogin="123"
     valPassword="123"
@@ -64,10 +66,10 @@ while True:
                                     price = 40
                                     additionals.append(additional.additional(type, size, price))
                                 elif choice == "2":
-                                    type = "Сироп"
-                                    price = 40
+                                    type = "Сливки"#####
+                                    price = 60
                                     additionals.append(additional.additional(type, size, price))
-                                coffees.append(coffe.coffe(name.name, coffePrice))
+                                coffees.append(coffe.coffe(name,size,coffePrice))#####
                             else:
                                 continue
 
