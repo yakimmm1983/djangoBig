@@ -26,6 +26,11 @@
      {% endfor %}
 </table>
 <h2>Итог: {{summ}}</h2>
+
+<form action={% url 'add-cart' product_id=product.id %}>
+    <input type="submit" value="Оплатить">
+<form/>
+
 </body>
 </html>
 
