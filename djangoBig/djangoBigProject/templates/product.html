@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1>{{product.name}}</h1>
-    <img src="{{ product.image }}">
+    <img src="{{ product.image }}" class="productImg">
     <p>{{product.description}}</p>
  <div class="grid-container">
     {% for topping in toppings %}
@@ -18,8 +18,8 @@
     </div>
     {% endfor %}
     </div>
-<form action={% url 'add-cart' product_id=product.id %}>
-    <input type="submit" value="Добавить в корзину">
+<form action={% url 'add-cart' product_id=product.id %} >
+    <input type="submit" value="Добавить в корзину" class="btn">
 <form/>
 
 </body>

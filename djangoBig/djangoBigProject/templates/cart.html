@@ -27,10 +27,13 @@
 </table>
 <h2>Итог: {{summ}}</h2>
 
-<form action={% url 'add-cart' product_id=product.id %}>
-    <input type="submit" value="Оплатить">
-<form/>
+<h3>Отправить чек на почту:</h3>
 
+<form action="{% url 'email_sender' %}" method="post">
+    {% csrf_token %}
+<input type="text" name="email" placeholder="Укажите e-mail" required> <br>
+<input type="submit" value="Оплатить" class="btn">
+</form>
 </body>
 </html>
 

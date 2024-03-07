@@ -1,5 +1,5 @@
 """
-URL configuration for djangoBigProject project.
+URL configuration for list_books project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/5.0/topics/http/urls/
@@ -16,15 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from mainApp.views import Main,Product,AddInCart,GetCart,SendEmail
+from myLibrarian.views import main,catalog,redirect
 
 urlpatterns = [
-    path('', Main,name='main'),
-    path('product/<int:product_id>/',Product,name='product'),
-    path('add-cart/<int:product_id>/',AddInCart, name='add-cart'),
-    path('get-cart/',GetCart,name='cart'),
-    path('send_email/',SendEmail, name='email_sender'),
-    path('admin/',admin.site.urls)
+    path('', main),
+    path('redirect/',redirect,name='redirect'),
+    path('catalog/',catalog,name='catalog'),
 ]
-
-

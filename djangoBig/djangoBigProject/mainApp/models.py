@@ -1,29 +1,30 @@
 from django.db import models
-class Product():
-    def __init__(self,id,price,name,description,image):
-        self.id = id
-        self.price = price
-        self.name = name
-        self.description = description
-        self.image = image
+class Product(models.Model):
+    id = models.AutoField(primary_key=True)
+    price = models.FloatField()
+    name = models.CharField(max_length=100)
+    description = models.TextField()
+    image = models.CharField(max_length=1287)
 
-class Topping():
-    def __init__(self,id,name,price):
-        self.id = id
-        self.name = name
-        self.price = price
 
-class Cart():
-    _products = []
-    _summ = 0
-    def AddProduct(self,product):
-        self._products.append(product)
-        self._summ = 0
-        for item in self._products:
-            self._summ += item.price
-    def GetProducts(self):
-        return self._products
+class Topping(models.Model):
+    id = models.AutoField(primary_key=True)
+    price = models.FloatField()
+    name = models.CharField(max_length=100)
 
-    def GetSum(self):
-        return self._summ
+class Cart(models.Model):
+    id = models.AutoField(primary_key=True)
+    products = models.ManyToManyField(Product)
+    summ = models.FloatField()
+
+    # def AddProduct(self,product):
+    #     self._products.append(product)
+    #     self._summ = 0
+    #     for item in self._products:
+    #         self._summ += item.price
+    # def GetProducts(self):
+    #     return self._products
+    #
+    # def GetSum(self):
+    #     return self._summ
 
