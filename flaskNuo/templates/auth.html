@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% if message %}
+<p>{{ message }}</p>
+{% endif %}
+<form action="" method="post">
+    <p>
+        <label for="username">Имя пользователя</label>
+        <input type="text" name = "username">
+    </p>
+        <label for="password">Пароль</label>
+        <input type="password" name="password">
+    <p>
+        <input type="submit" value="Вход">
+        <a href="http://127.0.0.1:5000/signup">Зарегистрироваться</a>
+    </p>
+</form>
+</body>
+</html>
