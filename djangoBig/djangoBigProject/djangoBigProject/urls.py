@@ -16,15 +16,19 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from mainApp.views import Main,Product,AddInCart,GetCart,SendEmail
+from mainApp.views import Main,Product,AddInCart,GetCart,SendEmail,register,RedirectMain
+from django.contrib.auth import views as auth_view
 
 urlpatterns = [
     path('', Main,name='main'),
+    path('register/',register,name='register'),
+    path('login/',auth_view.LoginView.as_view(template_name='login.html'),name='login'),
     path('product/<int:product_id>/',Product,name='product'),
     path('add-cart/<int:product_id>/',AddInCart, name='add-cart'),
     path('get-cart/',GetCart,name='cart'),
+    path('accounts/profile/',RedirectMain),
     path('send_email/',SendEmail, name='email_sender'),
-    path('admin/',admin.site.urls)
-]
+    path('admin/',admin.site.urls),
+    ]
 
 

@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="content-section">
+    <form method="POST">
+        {% csrf_token %}
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4">Регистрация</legend>
+            {{reg_form}}
+        </fieldset>
+        <button type="submit" class="btn btn-outline-info">Зарегистрироваться</button>
+    </form>
+</div>
+<div class="border-top pt-3">
+    <small>Есть аккаунт? <a href="{% url 'login' %}">Вход</a> </small>
+</div>
+{% endblock content %}
+
+

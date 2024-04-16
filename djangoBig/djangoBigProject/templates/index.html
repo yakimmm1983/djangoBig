@@ -1,12 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-{% load static %}
-<head>
-    <meta charset="UTF-8">
-    <title>Пельменная</title>
-    <link rel="stylesheet" href="{% static 'css/stylesheet.css' %}" type="text/css">
-</head>
-<body>
+{% extends "base.html" %}
+{% block content %}
+<div>
+    <form method="POST" action={% url 'login' %}>
+        {% csrf_token %}
+
+        <button type="submit">Вход</button>
+    </form>
+</div>
+<br>
+<div>
+    <form method="POST" action={% url 'register' %}>
+        {% csrf_token %}
+
+        <button type="submit">Регистрация</button>
+    </form>
+</div>
+<br>
+
     <div class="grid-container">
     {% for product in products %}
     <div class = "card">
@@ -24,5 +34,4 @@
         <input type="submit" value="Перейти в корзину"class="btn">
     </form>
 
-</body>
-</html>
+{% endblock content %}

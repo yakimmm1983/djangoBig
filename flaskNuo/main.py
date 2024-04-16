@@ -53,11 +53,16 @@ def main():
         return redirect("/auth")
     else:
         return redirect("/home")
+
 @app.route("/home")
 def home():
+    global saved_user
     if request.method == 'GET':
-        pass
+        respons = requests.get(f"{BACKEND_URL}all-note/{saved_user['id']}")
+        notes = respons.json()
+        return render_template("home-page.html",notes = notes)
     return render_template("home-page.html")
+
 @app.route("/user-cabinet",methods=['POST','GET'])
 def user_cabinet():
     global saved_user

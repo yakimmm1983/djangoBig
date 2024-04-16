@@ -1,12 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-{% load static %}
-<head>
-    <meta charset="UTF-8">
-    <title>Cart</title>
-    <link rel="stylesheet" href="{% static 'css/stylesheet.css' %}" type="text/css">
-</head>
-<body>
+{% extends "base.html" %}
+{% block content %}
 <h2>Корзина</h2>
 <table class="root-table">
     <tr>
@@ -34,6 +27,5 @@
 <input type="text" name="email" placeholder="Укажите e-mail" required> <br>
 <input type="submit" value="Оплатить" class="btn">
 </form>
-</body>
-</html>
+{% endblock content %}
 
